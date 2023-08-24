@@ -21,4 +21,20 @@ model Line {
   name      String
   company   Company  @relation(fields: [companyId], references: [id])
   companyId Int
+  stations LineOnStation[]
+}
+
+model Station {
+  id        Int      @id @default(autoincrement())
+  name      String
+  lines LineOnStation[]
+}
+
+model LineOnStation {
+  lineId    Int
+  stationId Int
+  line      Line   @relation(fields: [lineId], references: [id])
+  station   Station @relation(fields: [stationId], references: [id])
+
+  @@id([lineId, stationId])
 }
