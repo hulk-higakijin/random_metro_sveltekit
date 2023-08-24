@@ -1,6 +1,7 @@
 <script lang="ts">
 	export let data;
-	export let companies = data.companies;
+
+	const companies = data.companies;
 </script>
 
 <div>
