@@ -1,14 +1,17 @@
 <script>
 	export let data;
 	const station = data.station;
+	const lines = station.lines;
 </script>
 
 <h1>{station.name}</h1>
 
 <ul>
-	{#each station.lines as line}
+	{#each lines as line}
 		<li>
-			{line.name}
+			<a href="/lines/{line.id}">
+				{line.name}
+			</a>
 		</li>
 	{/each}
 </ul>

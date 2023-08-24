@@ -10,7 +10,9 @@
 	<ul>
 		{#each lines as line}
 			<li>
-				{line.name}
+				<a href="/lines/{line.id}">
+					{line.name}
+				</a>
 			</li>
 		{/each}
 	</ul>
