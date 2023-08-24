@@ -13,4 +13,12 @@ datasource db {
 model Company {
   id        Int      @id @default(autoincrement())
   name      String
+  lines     Line[]
+}
+
+model Line {
+  id        Int      @id @default(autoincrement())
+  name      String
+  company   Company  @relation(fields: [companyId], references: [id])
+  companyId Int
 }
