@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	export let data;
 	const station = data.station;
 	const lines = station.lines;

@@ -1,12 +1,11 @@
 <script lang="ts">
 	export let data;
 
-	const line = data.line;
-	const stations = line.stations;
+	const { stations } = data
 </script>
 
 <div>
-	<p>{line.name}</p>
+	<p>Stations</p>
 	<ul>
 		{#each stations as station}
 			<li>
