@@ -1,17 +1,10 @@
 <script lang="ts">
 	export let data;
-	const station = data.station;
-	const lines = station.lines;
+
+	const { station } = data;
+	const line_names = station.lines.map((line) => line.name);
 </script>
 
-<h1>{station.name}</h1>
-
-<ul>
-	{#each lines as line}
-		<li>
-			<a href="/lines/{line.id}">
-				{line.name}
-			</a>
-		</li>
-	{/each}
-</ul>
+<h1>
+	{station.name}（{line_names.join(', ')}）
+</h1>
