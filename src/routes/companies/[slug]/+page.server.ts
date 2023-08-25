@@ -3,7 +3,7 @@ import { error } from '@sveltejs/kit';
 
 export const load = async ({ params: { slug } }) => {
 	const company = await prisma.company.findUnique({
-		where: { id: Number(slug) },
+		where: { id: slug },
 		include: { lines: true }
 	});
 

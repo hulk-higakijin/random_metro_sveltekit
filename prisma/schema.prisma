@@ -11,21 +11,21 @@ datasource db {
 }
 
 model Company {
-  id    Int    @id @default(autoincrement())
+  id    String @id @default(cuid())
   name  String @unique
   lines Line[]
 }
 
 model Line {
-  id        Int             @id @default(autoincrement())
-  name      String          @unique
-  company   Company         @relation(fields: [companyId], references: [id])
-  companyId Int
+  id        String    @id @default(cuid())
+  name      String    @unique
+  company   Company   @relation(fields: [companyId], references: [id])
+  companyId String
   stations  Station[]
 }
 
 model Station {
-  id    Int             @id @default(autoincrement())
-  name  String          @unique
+  id    String @id @default(cuid())
+  name  String @unique
   lines Line[]
 }
